@@ -116,12 +116,12 @@
   update();const interval=setInterval(update,1000);
   // After Stripe verification: set a real Stripe Payment Link below.
   // Never paste secret keys or private API tokens into this public file.
-  const checkoutUrl = '';
+  const checkoutUrl = 'https://buy.stripe.com/3cIbJ3gqf2vkfkEciv0Ba00';
   if(/^https:\/\/buy\.stripe\.com\//.test(checkoutUrl)){
     const button=document.getElementById('checkout');
     button.href=checkoutUrl;button.removeAttribute('aria-disabled');button.removeAttribute('role');button.removeAttribute('tabindex');
     button.textContent='Pre-order your copy';
-    document.getElementById('checkout-note').textContent='Pre-order payment is collected at checkout. Shipping cost, estimated dispatch timing, and refund terms are shown before purchase.';
+    document.getElementById('checkout-note').textContent='Payment is collected when you pre-order. Production is scheduled to begin November 30; this is not a shipping date. Please review the shipping and refund information before purchasing.';
   }
 })();
 </script>
