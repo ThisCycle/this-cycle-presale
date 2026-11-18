@@ -14,7 +14,41 @@
 <div class="details"><div class="eyebrow" style="color:#bd492c">SHARE THE NEWS</div><h2>GOOD THINGS ARE WORTH SHARING.</h2>
 <p>Help someone discover a different way to find direction, reflect, and decide what comes next.</p>
 <div class="captionbox"><div class="captionhead">Suggested caption</div><div id="caption">I just ordered This Cycle! It's a guided journal for finding direction and making progress, one cycle at a time.</div><div class="url">https://preorder.thiscycleco.com/just-ordered/</div></div>
-<div class="actions"><button class="btn light" id="copy" type="button">▣ &nbsp; Copy caption</button><a class="btn dark" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpreorder.thiscycleco.com%2Fjust-ordered%2F" target="_blank" rel="noopener noreferrer" aria-label="Open Facebook to share your purchase">f &nbsp; Share on Facebook</a></div>
+<div class="actions" style="grid-template-columns:1fr"><button class="btn dark" id="share-facebook" type="button" aria-label="Copy suggested caption and open Facebook sharing">f &nbsp; Copy caption &amp; open Facebook</button></div>
 <p class="note">Sharing is optional. Facebook may not automatically insert your caption, so copy it first if you'd like to use it. Sharing never posts without your approval.</p>
 </div></section></main><footer>THIS CYCLE &nbsp;·&nbsp; make the habit the tool. don't make the tool the habit.</footer><div class="toast" role="status" aria-live="polite" id="toast">Caption copied!</div>
-<script>(function(){const btn=document.getElementById('copy'),toast=document.getElementById('toast');btn.addEventListener('click',async()=>{const value=document.getElementById('caption').textContent+'\n\nhttps://preorder.thiscycleco.com/just-ordered/';let ok=false;try{await navigator.clipboard.writeText(value);ok=true}catch(e){const t=document.createElement('textarea');t.value=value;document.body.appendChild(t);t.select();try{ok=document.execCommand('copy')}catch(e){}t.remove()}toast.textContent=ok?'Caption copied!':'Select the caption above to copy it.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2300)})})();</script></body></html>
+<script>
+(function(){
+  const button=document.getElementById('share-facebook');
+  const toast=document.getElementById('toast');
+  const shareUrl='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpreorder.thiscycleco.com%2Fjust-ordered%2F';
+  function show(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3500);}
+  function legacyCopy(value){
+    const field=document.createElement('textarea');
+    field.value=value;
+    field.setAttribute('readonly','');
+    field.style.position='fixed';field.style.opacity='0';
+    document.body.appendChild(field);
+    field.focus();field.select();field.setSelectionRange(0,field.value.length);
+    let copied=false;
+    try{copied=document.execCommand('copy');}catch(e){}
+    field.remove();
+    return copied;
+  }
+  button.addEventListener('click',function(){
+    const caption=document.getElementById('caption').textContent.trim();
+    const value=caption+'\n\nhttps://preorder.thiscycleco.com/just-ordered/';
+    let copied=legacyCopy(value);
+    if(!copied && navigator.clipboard && navigator.clipboard.writeText){
+      try{
+        navigator.clipboard.writeText(value).then(()=>show('Caption copied! Paste it into your Facebook post.')).catch(()=>show('Facebook opened. Copy the caption manually if needed.'));
+      }catch(e){show('Facebook opened. Copy the caption manually if needed.');}
+    } else {
+      show(copied?'Caption copied! Paste it into your Facebook post.':'Facebook opened. Copy the caption manually if needed.');
+    }
+    // Open directly in this click handler to avoid popup blockers.
+    const opened=window.open(shareUrl,'_blank','noopener,noreferrer');
+    if(!opened){window.location.href=shareUrl;}
+  });
+})();
+</script></body></html>
