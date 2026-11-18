@@ -47,8 +47,8 @@
       show(copied?'Caption copied! Paste it into your Facebook post.':'Facebook opened. Copy the caption manually if needed.');
     }
     // Open directly in this click handler to avoid popup blockers.
-    const opened=window.open(shareUrl,'_blank','noopener,noreferrer');
-    if(!opened){window.location.href=shareUrl;}
+    const opened=window.open(shareUrl,'_blank');
+    if(opened){opened.opener=null;}else{window.location.href=shareUrl;}
   });
 })();
 </script></body></html>
