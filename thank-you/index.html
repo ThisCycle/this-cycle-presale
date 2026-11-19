@@ -14,44 +14,7 @@
 <div class="details"><div class="eyebrow" style="color:#bd492c">SHARE THE NEWS</div><h2>GOOD THINGS ARE WORTH SHARING.</h2>
 <p>Help someone discover a different way to find direction, reflect, and decide what comes next.</p>
 <div class="captionbox"><div class="captionhead">Suggested caption</div><div id="caption">I just ordered This Cycle! It's a guided journal for finding direction and making progress, one cycle at a time.</div><div class="url">https://preorder.thiscycleco.com/just-ordered/</div></div>
-<div class="actions" id="share-actions"><button class="btn dark" id="share-facebook" type="button" aria-label="Copy suggested caption and open Facebook sharing">f &nbsp; Copy &amp; open Facebook</button><button class="btn light" id="share-native" type="button" hidden>↗ &nbsp; Share from phone</button></div>
+<div class="actions"><button class="btn light" id="copy" type="button">▣ &nbsp; Copy caption</button><a class="btn dark" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpreorder.thiscycleco.com%2Fjust-ordered%2F" target="_blank" rel="noopener noreferrer" aria-label="Open Facebook to share your purchase">f &nbsp; Share on Facebook</a></div>
 <p class="note">Sharing is optional. Facebook may not automatically insert your caption, so copy it first if you'd like to use it. Sharing never posts without your approval.</p>
 </div></section></main><footer>THIS CYCLE &nbsp;·&nbsp; make the habit the tool. don't make the tool the habit.</footer><div class="toast" role="status" aria-live="polite" id="toast">Caption copied!</div>
-<script>
-(function(){
-  const facebook=document.getElementById('share-facebook');
-  const native=document.getElementById('share-native');
-  const toast=document.getElementById('toast');
-  const pageUrl='https://preorder.thiscycleco.com/just-ordered/';
-  const shareUrl='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageUrl);
-  const caption=document.getElementById('caption').textContent.trim();
-  function show(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3500);}
-  function legacyCopy(value){
-    const field=document.createElement('textarea');field.value=value;
-    field.style.position='fixed';field.style.opacity='0';field.setAttribute('readonly','');
-    document.body.appendChild(field);field.focus();field.select();field.setSelectionRange(0,field.value.length);
-    let ok=false;try{ok=document.execCommand('copy')}catch(e){}field.remove();return ok;
-  }
-  async function copyCaption(){
-    const value=caption+'\n\n'+pageUrl;
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      try{await navigator.clipboard.writeText(value);return true}catch(e){}
-    }
-    return legacyCopy(value);
-  }
-  facebook.addEventListener('click',function(){
-    // Initiate the clipboard operation during the user gesture, before navigation.
-    const copyResult=copyCaption();
-    const opened=window.open(shareUrl,'_blank');
-    if(opened){opened.opener=null;}else{window.location.href=shareUrl;}
-    copyResult.then(ok=>show(ok?'Caption copied. Paste it into your Facebook post.':'Facebook opened. If paste is unavailable, copy the caption manually.'));
-  });
-  if(typeof navigator.share==='function'){
-    native.hidden=false;
-    native.addEventListener('click',async function(){
-      try{await navigator.share({title:'I JUST ORDERED THIS CYCLE!',text:caption,url:pageUrl})}
-      catch(e){if(e.name!=='AbortError')show('Your phone could not open the share sheet. Try the Facebook button instead.')}
-    });
-  }else{document.getElementById('share-actions').style.gridTemplateColumns='1fr';}
-})();
-</script></body></html>
+<script>(function(){const btn=document.getElementById('copy'),toast=document.getElementById('toast');btn.addEventListener('click',async()=>{const value=document.getElementById('caption').textContent+'\n\nhttps://preorder.thiscycleco.com/just-ordered/';let ok=false;try{await navigator.clipboard.writeText(value);ok=true}catch(e){const t=document.createElement('textarea');t.value=value;document.body.appendChild(t);t.select();try{ok=document.execCommand('copy')}catch(e){}t.remove()}toast.textContent=ok?'Caption copied!':'Select the caption above to copy it.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2300)})})();</script></body></html>
