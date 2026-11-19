@@ -53,6 +53,15 @@
   .first-run-note{margin:0 0 25px;padding-left:14px;border-left:3px solid var(--accent);font-size:14px;font-weight:600;line-height:1.5;color:var(--ink)}
   .cta:focus-visible,.wordmark:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
   </style>
+
+<!-- Google Analytics 4: This Cycle preorder site -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQJ8WPHHRH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FQJ8WPHHRH');
+</script>
 </head>
 <body>
 <header><div class="wrap nav"><a class="wordmark" href="https://thiscycleco.com" aria-label="This Cycle home">THIS <span class="bracket">[</span>CYCLE<span class="bracket">]</span></a><a class="more" href="#the-book">EXPLORE THE BOOK</a></div></header>
@@ -125,6 +134,16 @@
     button.textContent='Pre-order your copy';
     document.getElementById('checkout-note').textContent='Payment is collected when you pre-order. Production is scheduled to begin November 30; this is not a shipping date. Please review the shipping and refund information before purchasing.';
   }
+})();
+</script>
+
+<script>
+(function(){
+  const button=document.getElementById('checkout');
+  if(button){button.addEventListener('click',function(){
+    if(button.getAttribute('aria-disabled')==='true')return;
+    if(typeof gtag==='function')gtag('event','preorder_checkout_click',{event_category:'preorder',link_url:button.href});
+  });}
 })();
 </script>
 </body>
