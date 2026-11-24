@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#383838">
   <meta name="description" content="Try the actual This Cycle journal pages before buying the hardcover. Download a printable excerpt with the original instructions, reflection page, and planning page.">
-  <title>Try This Cycle — Original Journal Pages</title>
+  <title>Try This Cycle Before You Buy — Free Journal Pages</title>
   <style>
     :root { --charcoal:#383838; --ink:#242424; --orange:#ec5c39; --peach:#ff9378; --muted:#aaa; }
     * { box-sizing:border-box; }
@@ -73,10 +73,10 @@
     <section class="tc-test-shell" aria-label="Try This Cycle">
       <div>
         <p class="tc-test-kicker"><span class="tc-test-dot" aria-hidden="true"></span> THIS [CYCLE] / FREE TEST</p>
-        <h1>Start with<br><span>one cycle.</span></h1>
-        <p class="tc-test-lede">Before you buy the journal, try the actual pages. Reflect on a recent cycle, choose your focus, and plan what comes next.</p>
-        <p class="tc-test-detail">A free, printable three-page excerpt from the real journal: the original instructions, reflection page, and planning page. No new daily routine required.</p>
-        <button type="button" class="tc-test-primary" id="tc-test-open">DOWNLOAD THE FREE TEST <span aria-hidden="true">↓</span></button>
+        <h1>Try This Cycle<br><span>before you buy.</span></h1>
+        <p class="tc-test-lede">Experience the actual journal pages for yourself. Reflect on a recent cycle, choose your focus, and plan what comes next.</p>
+        <p class="tc-test-detail">Three original, printable journal pages: the instructions, reflection page, and planning page. Free to download. No purchase required.</p>
+        <button type="button" class="tc-test-primary" id="tc-test-open">GET THE FREE PAGES <span aria-hidden="true">↓</span></button>
         <p class="tc-test-help">3 original pages · PDF · Enter your email to download</p>
       </div>
       <div class="tc-test-preview">
@@ -93,8 +93,8 @@
     <div class="tc-test-modal" role="dialog" aria-modal="true" aria-labelledby="tc-test-modal-heading">
       <button type="button" id="tc-test-close" class="tc-test-close" aria-label="Close form">×</button>
       <p class="tc-test-modal-kicker">THIS [CYCLE] / FREE JOURNAL EXCERPT</p>
-      <h2 id="tc-test-modal-heading">Try the real<br>journal pages.</h2>
-      <p class="tc-test-modal-copy">Enter your email below. The original three-page journal excerpt will download once your submission is received.</p>
+      <h2 id="tc-test-modal-heading">Get your free<br>journal pages.</h2>
+      <p class="tc-test-modal-copy">Enter your email to download three real pages from This Cycle. No purchase required.</p>
       <form id="tc-test-form" method="POST" action="https://formspree.io/f/mkjrkpka">
         <label for="tc-test-email" class="tc-test-label">Email address</label>
         <input class="tc-test-email" type="email" name="email" id="tc-test-email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
@@ -102,7 +102,7 @@
         <input type="hidden" name="lead_magnet" value="This Cycle - original journal excerpt (3 pages)">
         <input type="hidden" name="marketing_opt_in" value="yes">
         <p class="tc-test-privacy">By submitting, you'll receive the free PDF and occasional This Cycle product updates and offers. Unsubscribe at any time.</p>
-        <button id="tc-test-submit" type="submit" class="tc-test-submit">GET MY FREE PDF ↓</button>
+        <button id="tc-test-submit" type="submit" class="tc-test-submit">GET MY FREE PAGES ↓</button>
         <p id="tc-test-feedback" class="tc-test-feedback" role="status" aria-live="polite" hidden></p>
         <a id="tc-test-manual" class="tc-test-manual" hidden download="This_Cycle_Free_Test.pdf">Download your PDF manually ↓</a>
       </form>
@@ -185,7 +185,7 @@
           feedback.className = 'tc-test-feedback error';
           feedback.textContent = error && error.message ? error.message : 'Unable to submit right now. Please try again.';
           submitButton.disabled = false;
-          submitButton.textContent = 'GET MY FREE PDF ↓';
+          submitButton.textContent = 'GET MY FREE PAGES ↓';
         }
       });
     })();
