@@ -44,16 +44,15 @@
     .tc-test-modal-copy { font-size:14px;color:#666;line-height:1.6;margin:0 0 25px; }
     .tc-test-label { display:block;font-size:12px;font-weight:700;margin:0 0 8px; }
     .tc-test-email { display:block;width:100%;height:50px;border:1px solid #aaa;background:#fff;padding:11px 13px;border-radius:0;color:#202020;font-size:16px; }
-    .tc-test-check { display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.45;color:#555;margin:17px 0 22px;cursor:pointer; }
-    .tc-test-check input { width:16px;height:16px;margin:1px 0 0;flex-shrink:0;accent-color:var(--orange); }
     .tc-test-submit { display:block;width:100%;border:0;background:var(--orange);color:#111;padding:17px 15px;font-size:13px;font-weight:800;letter-spacing:.06em;cursor:pointer; }
     .tc-test-submit:hover { background:#fa7958; }
     .tc-test-submit:disabled { opacity:.65;cursor:wait; }
-    .tc-test-privacy { margin:14px 0 0;color:#777;font-size:11px;line-height:1.55; }
+    .tc-test-privacy { margin:14px 0 18px;color:#777;font-size:11px;line-height:1.55; }
     .tc-test-feedback { margin:14px 0 0;font-size:13px;line-height:1.5; }
     .tc-test-feedback.error { color:#aa2f26; }
     .tc-test-feedback.success { color:#285c39; }
     .tc-test-manual { display:inline-block;margin-top:12px;font-size:13px;color:#242424;font-weight:700; }
+    .tc-test-manual[hidden], .tc-test-feedback[hidden] { display:none !important; }
     @media (max-width:800px) {
       .tc-test-header { padding:23px 24px; }
       .tc-test-shell { padding:48px 24px 60px;grid-template-columns:1fr;gap:54px; }
@@ -101,12 +100,9 @@
         <input class="tc-test-email" type="email" name="email" id="tc-test-email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
         <input type="hidden" name="source" value="this_cycle_original_pages_test">
         <input type="hidden" name="lead_magnet" value="This Cycle - original journal excerpt (3 pages)">
-        <label class="tc-test-check" for="tc-test-optin">
-          <input id="tc-test-optin" type="checkbox" name="marketing_opt_in" value="yes">
-          <span>Send me occasional updates and new resources from This Cycle. (Optional)</span>
-        </label>
+        <input type="hidden" name="marketing_opt_in" value="yes">
+        <p class="tc-test-privacy">By submitting, you'll receive the free PDF and occasional This Cycle product updates and offers. Unsubscribe at any time.</p>
         <button id="tc-test-submit" type="submit" class="tc-test-submit">GET MY FREE PDF ↓</button>
-        <p class="tc-test-privacy">We'll use your email to provide the excerpt. Updates are optional, and you can unsubscribe at any time.</p>
         <p id="tc-test-feedback" class="tc-test-feedback" role="status" aria-live="polite" hidden></p>
         <a id="tc-test-manual" class="tc-test-manual" hidden download="This_Cycle_Free_Test.pdf">Download your PDF manually ↓</a>
       </form>
@@ -121,7 +117,6 @@
       var closeButton = document.getElementById('tc-test-close');
       var form = document.getElementById('tc-test-form');
       var emailInput = document.getElementById('tc-test-email');
-      var optIn = document.getElementById('tc-test-optin');
       var submitButton = document.getElementById('tc-test-submit');
       var feedback = document.getElementById('tc-test-feedback');
       var manualLink = document.getElementById('tc-test-manual');
@@ -163,7 +158,6 @@
         feedback.hidden = true;
         try {
           var values = new FormData(form);
-          values.set('marketing_opt_in', optIn.checked ? 'yes' : 'no');
           var response = await fetch(form.action, {
             method: 'POST', body: values, headers: { 'Accept': 'application/json' }
           });
