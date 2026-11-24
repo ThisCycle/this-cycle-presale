@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383838">
+  <meta name="description" content="Try the actual This Cycle journal pages before buying the hardcover. Download a printable excerpt with the original instructions, reflection page, and planning page.">
+  <title>Try This Cycle — Original Journal Pages</title>
+  <style>
+    :root { --charcoal:#383838; --ink:#242424; --orange:#ec5c39; --peach:#ff9378; --muted:#aaa; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:#f8f8f8; background:var(--charcoal); }
+    a { color:inherit; }
+    button, input { font:inherit; }
+    .tc-test-page { width:100%; min-height:100vh; }
+    .tc-test-header { max-width:1200px; padding:24px 40px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .tc-test-logo { font-size:17px; font-weight:800; letter-spacing:-.045em; text-decoration:none; }
+    .tc-test-toplink { text-decoration:none; color:#d7d7d7; font-size:12px; letter-spacing:.06em; }
+    .tc-test-toplink:hover { color:#fff; }
+    .tc-test-shell { max-width:1200px; margin:auto; padding:62px 40px 85px; display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.75fr); gap:8%; align-items:center; }
+    .tc-test-kicker { display:flex;align-items:center;gap:10px;color:var(--peach);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 25px; }
+    .tc-test-dot { display:inline-block;width:8px;height:8px;flex-shrink:0;border-radius:50%;background:var(--orange); }
+    .tc-test-shell h1 { font-size:clamp(44px,5vw,76px);font-weight:650;line-height:1.05;letter-spacing:-.062em;margin:0 0 27px; }
+    .tc-test-shell h1 span { color:var(--peach); }
+    .tc-test-lede { color:#e2e2e2;font-size:clamp(16px,1.6vw,20px);line-height:1.65;max-width:580px;margin:0 0 18px; }
+    .tc-test-detail { color:#bcbcbc;font-size:13px;line-height:1.65;margin:0 0 28px; }
+    .tc-test-primary { display:inline-flex;align-items:center;justify-content:center;gap:16px;border:0;background:var(--orange);color:#111;font-size:13px;font-weight:800;letter-spacing:.065em;padding:19px 27px;cursor:pointer;transition:background .2s,transform .2s;text-decoration:none; }
+    .tc-test-primary:hover { background:#fa7958;transform:translateY(-2px); }
+    .tc-test-primary:focus-visible, .tc-test-modal a:focus-visible, .tc-test-modal input:focus-visible, .tc-test-close:focus-visible { outline:3px solid var(--peach);outline-offset:3px; }
+    .tc-test-help { font-size:11px;color:#b9b9b9;margin:17px 0 0; }
+    .tc-test-preview { position:relative;max-width:465px;width:100%;justify-self:center;padding:12px;background:#4a4a4a;box-shadow:0 30px 80px rgba(0,0,0,.28);transform:rotate(1.5deg); }
+    .tc-test-preview img { display:block;width:100%;height:auto;background:#fff; }
+    .tc-test-stamp { position:absolute;bottom:24px;right:-13px;background:var(--orange);color:#141414;font-size:10px;font-weight:800;letter-spacing:.08em;padding:12px 15px;transform:rotate(-1.5deg); }
+    .tc-test-bottom { background:#f5f4f2;color:#2b2b2b;text-align:center;padding:26px 20px 30px; }
+    .tc-test-bottom p { font-size:13px;line-height:1.7;margin:0 0 6px; }
+    .tc-test-bottom a { font-weight:700; }
+    .tc-test-overlay[hidden] { display:none !important; }
+    .tc-test-overlay { position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:10000;display:grid;place-items:center;padding:20px; }
+    .tc-test-modal { position:relative;background:#fff;color:var(--ink);max-width:460px;width:100%;padding:44px 34px 34px;box-shadow:0 30px 100px rgba(0,0,0,.35); }
+    .tc-test-close { border:0;background:transparent;position:absolute;right:15px;top:12px;cursor:pointer;padding:7px;font-size:25px;line-height:1;color:#666; }
+    .tc-test-modal-kicker { color:#c94b2c;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin:0 0 11px; }
+    .tc-test-modal h2 { font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:0 0 12px; }
+    .tc-test-modal-copy { font-size:14px;color:#666;line-height:1.6;margin:0 0 25px; }
+    .tc-test-label { display:block;font-size:12px;font-weight:700;margin:0 0 8px; }
+    .tc-test-email { display:block;width:100%;height:50px;border:1px solid #aaa;background:#fff;padding:11px 13px;border-radius:0;color:#202020;font-size:16px; }
+    .tc-test-check { display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.45;color:#555;margin:17px 0 22px;cursor:pointer; }
+    .tc-test-check input { width:16px;height:16px;margin:1px 0 0;flex-shrink:0;accent-color:var(--orange); }
+    .tc-test-submit { display:block;width:100%;border:0;background:var(--orange);color:#111;padding:17px 15px;font-size:13px;font-weight:800;letter-spacing:.06em;cursor:pointer; }
+    .tc-test-submit:hover { background:#fa7958; }
+    .tc-test-submit:disabled { opacity:.65;cursor:wait; }
+    .tc-test-privacy { margin:14px 0 0;color:#777;font-size:11px;line-height:1.55; }
+    .tc-test-feedback { margin:14px 0 0;font-size:13px;line-height:1.5; }
+    .tc-test-feedback.error { color:#aa2f26; }
+    .tc-test-feedback.success { color:#285c39; }
+    .tc-test-manual { display:inline-block;margin-top:12px;font-size:13px;color:#242424;font-weight:700; }
+    @media (max-width:800px) {
+      .tc-test-header { padding:23px 24px; }
+      .tc-test-shell { padding:48px 24px 60px;grid-template-columns:1fr;gap:54px; }
+      .tc-test-preview { max-width:340px; }
+      .tc-test-shell h1 { font-size:clamp(39px,10vw,60px); }
+    }
+    @media (max-width:480px) { .tc-test-header { flex-wrap:wrap; } .tc-test-modal { padding:45px 22px 25px; } }
+    @media (prefers-reduced-motion:reduce) { * { transition:none !important;scroll-behavior:auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="tc-test-page">
+    <header class="tc-test-header">
+      <a class="tc-test-logo" href="https://thiscycleco.com/">THIS [CYCLE]</a>
+      <a class="tc-test-toplink" href="https://preorder.thiscycleco.com/">SEE THE FULL JOURNAL ↗</a>
+    </header>
+
+    <section class="tc-test-shell" aria-label="Try This Cycle">
+      <div>
+        <p class="tc-test-kicker"><span class="tc-test-dot" aria-hidden="true"></span> THIS [CYCLE] / FREE TEST</p>
+        <h1>Start with<br><span>one cycle.</span></h1>
+        <p class="tc-test-lede">Before you buy the journal, try the actual pages. Reflect on a recent cycle, choose your focus, and plan what comes next.</p>
+        <p class="tc-test-detail">A free, printable three-page excerpt from the real journal: the original instructions, reflection page, and planning page. No new daily routine required.</p>
+        <button type="button" class="tc-test-primary" id="tc-test-open">DOWNLOAD THE FREE TEST <span aria-hidden="true">↓</span></button>
+        <p class="tc-test-help">3 original pages · PDF · Enter your email to download</p>
+      </div>
+      <div class="tc-test-preview">
+        <img src="./preview.png" width="1275" height="1650" alt="The actual blank Previous Cycle Reflection page from the printed This Cycle journal" loading="eager">
+      </div>
+    </section>
+    <footer class="tc-test-bottom">
+      <p>Want a way to keep going? The full 120-page hardcover journal launches November 30.</p>
+      <a href="https://preorder.thiscycleco.com/">Explore the full journal ↗</a>
+    </footer>
+  </main>
+
+  <div id="tc-test-overlay" class="tc-test-overlay" hidden>
+    <div class="tc-test-modal" role="dialog" aria-modal="true" aria-labelledby="tc-test-modal-heading">
+      <button type="button" id="tc-test-close" class="tc-test-close" aria-label="Close form">×</button>
+      <p class="tc-test-modal-kicker">THIS [CYCLE] / FREE JOURNAL EXCERPT</p>
+      <h2 id="tc-test-modal-heading">Try the real<br>journal pages.</h2>
+      <p class="tc-test-modal-copy">Enter your email below. The original three-page journal excerpt will download once your submission is received.</p>
+      <form id="tc-test-form" method="POST" action="https://formspree.io/f/mkjrkpka">
+        <label for="tc-test-email" class="tc-test-label">Email address</label>
+        <input class="tc-test-email" type="email" name="email" id="tc-test-email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
+        <input type="hidden" name="source" value="this_cycle_original_pages_test">
+        <input type="hidden" name="lead_magnet" value="This Cycle - original journal excerpt (3 pages)">
+        <label class="tc-test-check" for="tc-test-optin">
+          <input id="tc-test-optin" type="checkbox" name="marketing_opt_in" value="yes">
+          <span>Send me occasional updates and new resources from This Cycle. (Optional)</span>
+        </label>
+        <button id="tc-test-submit" type="submit" class="tc-test-submit">GET MY FREE PDF ↓</button>
+        <p class="tc-test-privacy">We'll use your email to provide the excerpt. Updates are optional, and you can unsubscribe at any time.</p>
+        <p id="tc-test-feedback" class="tc-test-feedback" role="status" aria-live="polite" hidden></p>
+        <a id="tc-test-manual" class="tc-test-manual" hidden download="This_Cycle_Free_Test.pdf">Download your PDF manually ↓</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var overlay = document.getElementById('tc-test-overlay');
+      var openButton = document.getElementById('tc-test-open');
+      var closeButton = document.getElementById('tc-test-close');
+      var form = document.getElementById('tc-test-form');
+      var emailInput = document.getElementById('tc-test-email');
+      var optIn = document.getElementById('tc-test-optin');
+      var submitButton = document.getElementById('tc-test-submit');
+      var feedback = document.getElementById('tc-test-feedback');
+      var manualLink = document.getElementById('tc-test-manual');
+      var pdfUrl = './This_Cycle_Free_Test.pdf';
+      var previousFocus = null;
+      var unlocked = false;
+
+      function openModal() {
+        previousFocus = document.activeElement;
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        emailInput.focus();
+      }
+      function closeModal() {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+        if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+      }
+      openButton.addEventListener('click', openModal);
+      closeButton.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (event) { if (event.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function (event) {
+        if (overlay.hidden) return;
+        if (event.key === 'Escape') closeModal();
+        if (event.key === 'Tab') {
+          var focusable = Array.prototype.slice.call(overlay.querySelectorAll('button:not([disabled]), input:not([disabled]), a[href]')).filter(function(el){return !el.hidden;});
+          var first = focusable[0], last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+          else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        }
+      });
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (unlocked) { manualLink.click(); return; }
+        if (!form.reportValidity()) return;
+        submitButton.disabled = true;
+        submitButton.textContent = 'SENDING…';
+        feedback.hidden = true;
+        try {
+          var values = new FormData(form);
+          values.set('marketing_opt_in', optIn.checked ? 'yes' : 'no');
+          var response = await fetch(form.action, {
+            method: 'POST', body: values, headers: { 'Accept': 'application/json' }
+          });
+          if (!response.ok) {
+            var message = 'Something went wrong. Please try again.';
+            try {
+              var result = await response.json();
+              if (result.errors && result.errors.length) message = result.errors.map(function(e){return e.message;}).join(' ');
+            } catch (e) { /* retain default message */ }
+            if (response.status === 429) message = 'Too many requests right now. Please try again in a moment.';
+            throw new Error(message);
+          }
+          unlocked = true;
+          feedback.hidden = false;
+          feedback.className = 'tc-test-feedback success';
+          feedback.textContent = 'You’re in! Your download is ready.';
+          manualLink.href = pdfUrl;
+          manualLink.hidden = false;
+          submitButton.textContent = 'DOWNLOAD READY ✓';
+          // Browsers may block automatic downloads after a network request.
+          // Keep the visible fallback link so no one gets stuck.
+          manualLink.click();
+        } catch (error) {
+          feedback.hidden = false;
+          feedback.className = 'tc-test-feedback error';
+          feedback.textContent = error && error.message ? error.message : 'Unable to submit right now. Please try again.';
+          submitButton.disabled = false;
+          submitButton.textContent = 'GET MY FREE PDF ↓';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
